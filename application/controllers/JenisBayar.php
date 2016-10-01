@@ -16,7 +16,9 @@ class Jenisbayar extends CI_Controller {
 	public function index() {
 		$data['dJenis']=$this->mJenis->bacaJenis();
 		//$data['dTransaksi']=$this->banghaji->bacaTransaksi();
-		$this->load->view('vJenisBayar', $data);
+		$data['user_menu'] = 'user_menu';
+		$data['user_content'] = 'vJenisBayar';
+		$this->load->view('user_template', $data);
 	}
 	
 	function hapus() {

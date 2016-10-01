@@ -16,7 +16,9 @@ class Tempatbayar extends CI_Controller {
 	public function index() {
 		$data['dTempat']=$this->mTempat->bacaTempat();
 		//$data['dTransaksi']=$this->banghaji->bacaTransaksi();
-		$this->load->view('vTempatBayar', $data);
+		$data['user_menu'] = 'user_menu';
+		$data['user_content'] = 'vTempatBayar';
+		$this->load->view('user_template', $data);
 	}
 	
 	function hapus() {

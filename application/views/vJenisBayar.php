@@ -12,7 +12,7 @@
 		[<?php echo anchor('jenisbayar/tambah', 'tambah'); ?>]
 	</p>
 	
-	<table border="1" width="100%">
+	<table class="table table-bordered table-hover table-striped">
 		<thead>
 			<tr>
 				<th>ID</th>
