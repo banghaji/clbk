@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Fixed Top Navbar Example for Bootstrap</title>
+    <title>Aplikasi CLBK</title>
 
     <link href="<?=base_url();?>_lib/css/bootstrap.min.css" rel="stylesheet">
 

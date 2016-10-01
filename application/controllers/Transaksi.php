@@ -11,14 +11,22 @@ class Transaksi extends CI_Controller {
 		//$this->load->model('mTransaksi','banghaji');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
+		$this->load->library('session');
 	}
 	
 	public function index() {
-		$data['dTransaksi']=$this->mTransaksi->bacaTransaksi();
-		//$data['dTransaksi']=$this->banghaji->bacaTransaksi();
-		$data['user_menu'] = 'user_menu';
-		$data['user_content'] = 'vTransaksi';
-		$this->load->view('user_template', $data);
+		$masuk = $this->session->userdata('logged_in');
+		if (empty($masuk)) {
+			$this->session->sess_destroy();
+			redirect('user'); //masuk tanpa permisi dilempar ke sini :)
+		}
+		else {
+			$data['dTransaksi']=$this->mTransaksi->bacaTransaksi();
+
+			$data['user_menu'] = 'user_menu';
+			$data['user_content'] = 'vTransaksi';
+			$this->load->view('user_template', $data);
+		}
 	}
 	
 	function hapus() {

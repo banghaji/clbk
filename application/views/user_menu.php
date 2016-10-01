@@ -23,11 +23,11 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nama User di Sini <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=$this->session->userdata('nama');?> <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a>Ganti Sandi</a></li>
                 <li class="divider"></li>
-                <li><a>Keluar</a></li>
+                <li><?=anchor('user/logout', 'Keluar');?></li>
               </ul>
             </li>
           </ul>
